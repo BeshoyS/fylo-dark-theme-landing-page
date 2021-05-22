@@ -1,0 +1,539 @@
+/* Global */
+:root {
+  --intro-email-background: hsl(217, 28%, 15%);
+  --main-background: hsl(218, 28%, 13%);
+  --footer-background: hsl(216, 53%, 9%);
+  --testimonials-background: hsl(219, 30%, 18%);
+  --cyan-color: hsl(176, 68%, 64%);
+  --cta-color: linear-gradient(-225deg, hsl(176, 68%, 64%) -40%, HSL(198, 60%, 50%)50%);
+  --cta-hover-color: linear-gradient(-225deg, hsl(176, 68%, 64%) 40%, HSL(198, 60%, 50%));
+  --error-color: hsl(0, 100%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --main-padding: 0 4%;
+  --main-font: 'Raleway', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile Version */
+body {
+  background-color: var(--main-background);
+  color: var(--white);
+  font-family: var(--main-font);
+  font-size: 14px;
+}
+
+p {
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-size: 1em;
+  line-height: 1.7;
+  margin: 0 7% 10%;
+}
+
+/* Header */
+header {
+  background-color: var(--intro-email-background);
+  padding: 2rem 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 70%;
+  vertical-align: middle;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 5px;
+}
+
+nav ul li:hover {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* Intro */
+.intro {
+  background-color: var(--intro-email-background);
+  padding: var(--main-padding);
+  text-align: center;
+}
+
+.intro img {
+  width: 100%;
+}
+
+.intro h1 {
+  font-size: 1.7rem;
+  line-height: 1.7;
+  margin: 20px auto;
+}
+
+.btn {
+  background-image: var(--cta-color);
+  padding: 20px 75px;
+  color: var(--white);
+  border: 1px solid var(--cta-color);
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.btn:hover {
+  background-image: var(--cta-hover-color);
+}
+
+.intro,
+.intro img,
+.intro h1,
+.intro p,
+.intro .btn {
+  position: relative;
+  z-index: 2;
+}
+
+.intro::before {
+  content: "";
+  background-image: url("images/bg-curvy-mobile.svg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 65%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.intro::after {
+  content: "";
+  width: 100%;
+  height: 44%;
+  background-color: var(--main-background);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Features */
+.features {
+  text-align: center;
+  margin: 30% auto;
+}
+
+.features-list {
+  margin-bottom: 30%;
+}
+
+.features-list img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.features-list h3 {
+  margin: 20px auto;
+}
+
+/* How Fylo Works */
+.how {
+  padding: var(--main-padding);
+  margin: 30% auto;
+}
+
+.how-image img {
+  width: 100%;
+}
+
+.content {
+  margin: 15% auto;
+}
+
+.content h2,
+.content a {
+  margin-left: 7%;
+  margin-bottom: 7%;
+}
+
+.content h2 {
+  font-size: 1.2rem;
+}
+
+.how a {
+  background-image: var(--cta-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  font-weight: 700;
+  position: relative;
+}
+
+.how a img {
+  vertical-align: middle;
+}
+
+.how a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -10px;
+  left: 0;
+  background-image: var(--cta-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease-out;
+}
+
+.how a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Testimonials */
+.testimonials {
+  position: relative;
+  z-index: 1;
+  margin: 30% auto;
+}
+
+.testimonials-list {
+  width: 85%;
+  margin: 15% auto;
+  padding: 10px;
+  background-color: var(--testimonials-background);
+  border-radius: 5px;
+  box-shadow: 0px 10px 5px var(--testimonials-background);
+}
+
+.testimonials-reviewer {
+  margin: 0 7%;
+  display: flex;
+}
+
+.testimonials-reviewer img {
+  width: 15%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.testimonials-list p {
+  margin: 7% 3%;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h4 {
+  letter-spacing: 1px;
+  margin: 2px;
+}
+
+h5 {
+  font-weight: lighter;
+  word-spacing: 2px;
+  margin: 2px;
+}
+
+.testimonials::before {
+  content: "";
+  background-image: url("images/bg-quotes.png");
+  background-size: 23px 23px;
+  background-repeat: no-repeat;
+  display: block;
+  width: 29px;
+  height: 21px;
+  position: absolute;
+  top: -20px;
+  left: 34px;
+  z-index: 2;
+}
+
+/* CTA */
+form {
+  position: relative;
+}
+
+.cta {
+  width: 95%;
+  margin: 15% auto -50%;
+  padding: 10px;
+  background-color: var(--testimonials-background);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  text-align: center;
+  position: relative;
+}
+
+.cta h2 {
+  margin: 40px auto 30px;
+}
+
+input {
+  padding: 20px 60px;
+  border: 1px solid var(--white);
+  border-radius: 50px;
+  margin-bottom: 28px;
+}
+
+/* .error-msg {
+  position: absolute;
+  width: 100%;
+  top: 65px;
+  left: 0;
+  color: var(--error-color);
+  display: none;
+} */
+/* footer */
+footer {
+  background-color: var(--footer-background);
+  padding: 60% 4% 0;
+}
+
+.location {
+  display: flex;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  width: 40%;
+}
+
+.phone,
+.email {
+  display: flex;
+  align-items: flex-start;
+}
+
+footer img {
+  margin-top: 4px;
+}
+
+.location p,
+.phone p,
+.email p {
+  margin-bottom: 5%;
+}
+
+.links1,
+.links2 {
+  margin: 40px auto;
+}
+
+.links1 p,
+.links2 p {
+  margin: 0 0 5%;
+}
+
+p a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+p a:hover {
+  font-weight: 700;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social a {
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.social a i {
+  margin-left: 15px;
+  color: var(--white);
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social a i:hover {
+  color: var(--cyan-color);
+  border: 1px solid var(--cyan-color);
+}
+
+@media (min-width: 768px) {
+
+  /* Header */
+  nav ul li {
+    margin: 10px 40px;
+  }
+
+  /* Intro */
+
+  .intro {
+    padding-bottom: 10%;
+
+  }
+
+  .intro img {
+    width: 50%;
+  }
+
+  .intro h1 {
+    width: 50%;
+    font-size: 2.2rem;
+  }
+
+  .intro p {
+    width: 35%;
+    margin: 0 auto 2%;
+  }
+
+  .intro::before {
+
+    background-image: url("images/bg-curvy-desktop.svg");
+    background-repeat: no-repeat;
+    height: 36%;
+    left: -84px;
+  }
+
+  .intro::after {
+  height: 50px;
+  }
+
+  /* Features */
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5% auto 2%;
+  }
+
+  .features-list {
+    width: 35%;
+    margin-bottom: 10%;
+  }
+
+  .features-images {
+    height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .features-list p {
+    width: 80%;
+    margin: auto;
+  }
+
+  /* How */
+  .how {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .how-image {
+    width: 100%;
+  }
+
+  .content h2 {
+    font-size: 2rem;
+    width: 50%;
+    margin-bottom: 4%;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    margin: 10% 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .testimonials-list {
+    margin: 0 auto 10%;
+  }
+
+  .testimonials::before {
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    top: -38px;
+    left: -8px;
+    z-index: -1;
+  }
+
+/* CTA */
+  .cta {
+    width: 60%;
+    margin: 15% auto -11%;
+    padding: 10px;
+  }
+
+  .cta p {
+    margin: 0px 7% 5%;
+  }
+
+  input {
+    padding: 15px 20%;
+  }
+
+  form .btn {
+    padding: 15px 42px;
+    margin-left: 20px;
+  }
+
+  /* Footer */
+
+  footer {
+    padding: 15% 4% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  footer div {
+    flex: 1;
+    margin: 2px;
+  }
+
+  .logo-location {
+    flex: 2;
+  }
+
+  .location {
+    width: 350px;
+  }
+
+  .links1,
+  .links2,
+  .phone-email,
+  .social {
+    margin: 65px auto;
+    }
+
+  .footer-logo  {
+    width: 100px;
+  }
+
+}
